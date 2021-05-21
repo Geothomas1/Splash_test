@@ -1,1 +1,1 @@
-# Splash_test_azure
+# Splash_test
