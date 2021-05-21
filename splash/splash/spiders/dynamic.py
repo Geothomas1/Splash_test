@@ -2,7 +2,8 @@ import scrapy
 from scrapy_splash import SplashRequest
 main_list=[]
 key=[
-    'viber'
+    'trivia+crack',
+    'wish'
 ]
 class DynamicSpider(scrapy.Spider):
     name = 'dynamic'
