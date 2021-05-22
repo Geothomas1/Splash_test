@@ -2,7 +2,7 @@ import scrapy
 from scrapy_splash import SplashRequest
 main_list=[]
 key=[
-    'words+with+friends'
+    'yahoo+mail'
 ]
 class DynamicSpider(scrapy.Spider):
     name = 'dynamic'
