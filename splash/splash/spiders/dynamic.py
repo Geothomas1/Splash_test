@@ -2,7 +2,7 @@ import scrapy
 from scrapy_splash import SplashRequest
 main_list=[]
 key=[
-    'Tactical+role+playing'
+    'Table+game'
 ]
 class DynamicSpider(scrapy.Spider):
     name = 'dynamic'
