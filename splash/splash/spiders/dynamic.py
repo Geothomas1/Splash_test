@@ -2,7 +2,7 @@ import scrapy
 from scrapy_splash import SplashRequest
 main_list=[]
 key=[
-    'Sports+based+fighting'
+    'Sports+management'
 ]
 class DynamicSpider(scrapy.Spider):
     name = 'dynamic'
