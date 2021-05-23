@@ -2,7 +2,7 @@ import scrapy
 from scrapy_splash import SplashRequest
 main_list=[]
 key=[
-    'Central+African+Republic'
+    'Chad'
 ]
 class DynamicSpider(scrapy.Spider):
     name = 'dynamic'
