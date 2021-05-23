@@ -2,7 +2,7 @@ import scrapy
 from scrapy_splash import SplashRequest
 main_list=[]
 key=[
-    'Japanese+role+playing'
+    'Interactive+fiction'
 ]
 class DynamicSpider(scrapy.Spider):
     name = 'dynamic'
