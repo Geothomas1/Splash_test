@@ -2,7 +2,7 @@ import scrapy
 from scrapy_splash import SplashRequest
 main_list=[]
 key=[
-    'background+eraser'
+    'background'
 ]
 class DynamicSpider(scrapy.Spider):
     name = 'dynamic'
