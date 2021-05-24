@@ -2,7 +2,7 @@ import scrapy
 from scrapy_splash import SplashRequest
 main_list=[]
 key=[
-    'app+hider'
+    'app+lock+password'
 ]
 class DynamicSpider(scrapy.Spider):
     name = 'dynamic'
