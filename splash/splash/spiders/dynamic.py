@@ -2,7 +2,12 @@ import scrapy
 from scrapy_splash import SplashRequest
 main_list=[]
 key=[
-    'Backbone'
+    'Backer',
+    'Backup',
+    'Bada+bing+bada+boom'
+    'Badass',
+    'Badassery',
+    'Balance'
 ]
 class DynamicSpider(scrapy.Spider):
     name = 'dynamic'
