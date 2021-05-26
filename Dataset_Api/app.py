@@ -15,7 +15,7 @@ service = build('sheets', 'v4', credentials=creds)
 # Call the Sheets API
 sheet = service.spreadsheets()
 
-mylist=['com.eniseistudio.logistics_management', 'com.eniseistudio.news.estados_unidos', 'com.eniseistudio.dental_assistant', 'com.eniseistudio.course.medical_assistant', 'com.eniseistudio.majors.course.business_administration', 'com.eniseistudio.economics', 'com.eniseistudio.course.cosmetology', 'com.jquiz.python', 'com.eniseistudio.quality_management', 'com.eniseistudio.tourism_management', 'education.kids.learning', 'earlylearn.kidslearningworld', 'desert.runner.boy', 'preschool.kids.abc.tracing', 'kids.word.games', 'earlylearn.kidslearningworld.pro', 'word.link.connect.puzzle', 'earlylearn.math.game', 'best.time.to.get.pregnant.ttf', 'com.communication.in.relationships.ttf', 'smooth.pick.up.lines.ttf', 'types.of.martial.arts.ttf', 'dating.questions.ttf', 'date.ideas.ttf', 'age.gap.relationships.ttf', 'how.to.conceive.a.girl.ttf', 'early.childhood.education.ttf', 'benefits.of.hot.yoga.ttf']
+mylist=['com.eniseistudio.logistics_management', 'com.eniseistudio.news.estados_unidos', 'com.eniseistudio.dental_assistant', 'com.eniseistudio.course.medical_assistant', 'com.eniseistudio.majors.course.business_administration']
 c=1
 for i in mylist:
     result = app(i,
@@ -49,7 +49,6 @@ for i in mylist:
     developerAddress=result['developerAddress']
     developerInternalID=result['developerInternalID']
     version=result['version']
-    recentChanges=result['recentChanges']
     data = [[app_name,
     appId,
     category,
@@ -77,8 +76,7 @@ for i in mylist:
     developer,
     developerAddress,
     developerInternalID,
-    version,
-    recentChanges]]
+    version]]
     result = sheet.values().append(spreadsheetId=SPREADSHEET_ID, range="Sheet1!A1:Y1", valueInputOption="USER_ENTERED", insertDataOption="INSERT_ROWS", body={"values":data}).execute()
     print(result)
     print(c)
