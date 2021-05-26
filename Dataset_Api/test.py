@@ -1,6 +1,6 @@
 from google_play_scraper import app
 
-mylist=['com.whatsapp']
+mylist=['com.eniseistudio.logistics_management', 'com.eniseistudio.news.estados_unidos', 'com.eniseistudio.dental_assistant', 'com.eniseistudio.course.medical_assistant', 'com.eniseistudio.majors.course.business_administration']
 c=1
 for i in mylist:
     result = app(i,
@@ -45,6 +45,7 @@ for i in mylist:
     print('orginal price',originalPrice)
     print('adsupport',adSupported)
     print('relesed',released)
+    print(privacyPolicy)
 
     #description=result['description']
     
