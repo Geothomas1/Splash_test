@@ -1,69 +1,74 @@
 from google_play_scraper import app
+import urllib
+import google_play_scraper
 
-mylist=['com.facebook.katana']
+mylist=['com.kinedu.appkinedu','com.whatsapp']
 c=1
 for i in mylist:
-    result = app(i,
-    lang='en',
-    country='us')
-    app_name=result['title']
-    appId=result['appId']
-    category=result['genre']
-    rating=result['score']
-    count_rated=result['ratings']
-    installs=result['installs']
-    minInstalls=result['minInstalls']
-    free=result['free']
-    price=result['price']
-    currency=result['currency']
-    size=result['size']
-    androidVersion=result['androidVersion']
-    developerId=result['developerId']
-    developerWebsite=result['developerWebsite']
-    developerEmail=result['developerEmail']
-    released=result['released']
-    privacyPolicy=result['privacyPolicy']
-    contentRating=result['contentRating']
-    adSupported=result['adSupported']
-    offersIAP=result['offersIAP']
-    editorsChoice=result['editorsChoice']
-    summary=result['summary']
-    reviews=result['reviews']
-    originalPrice=result['originalPrice']
-    androidVersionText=result['androidVersionText']
-    developer=result['developer']
-    developerAddress=result['developerAddress']
-    developerInternalID=result['developerInternalID']
-    version=result['version']
-    recentChanges=result['recentChanges']
-    updated=result['updated']
-    if(privacyPolicy==None):
-        privacyPolicy='N/A'
-    if(developerWebsite==None):
-        developerWebsite='N/A'
-    if(developerAddress==None):
-        developerAddress='N/A'
-    if(released==None):
-        released='N/A'
+    print(i)
+    try:
+        result = app(i, lang='en', country='us')
+        app_name=result['title']
+        appId=result['appId']
+        category=result['genre']
+        rating=result['score']
+        count_rated=result['ratings']
+        installs=result['installs']
+        minInstalls=result['minInstalls']
+        free=result['free']
+        price=result['price']
+        currency=result['currency']
+        size=result['size']
+        androidVersion=result['androidVersion']
+        developerId=result['developerId']
+        developerWebsite=result['developerWebsite']
+        developerEmail=result['developerEmail']
+        released=result['released']
+        privacyPolicy=result['privacyPolicy']
+        contentRating=result['contentRating']
+        adSupported=result['adSupported']
+        offersIAP=result['offersIAP']
+        editorsChoice=result['editorsChoice']
+        summary=result['summary']
+        reviews=result['reviews']
+        originalPrice=result['originalPrice']
+        androidVersionText=result['androidVersionText']
+        developer=result['developer']
+        developerAddress=result['developerAddress']
+        developerInternalID=result['developerInternalID']
+        version=result['version']
+        recentChanges=result['recentChanges']
+        updated=result['updated']
+        if(privacyPolicy==None):
+            privacyPolicy='N/A'
+        if(developerWebsite==None):
+            developerWebsite='N/A'
+        if(developerAddress==None):
+            developerAddress='N/A'
+        if(released==None):
+            released='N/A'
+        print(c)
+        c=c+1
+        print(app_name)
+        print(updated)
+        print(size)
+        print('orginal price',originalPrice)
+        print('adsupport',adSupported)
+        print('relesed',released)
+        print(privacyPolicy)
+        print(developerId)
+        print(developer)
+        print(developerWebsite)
+        print(developerAddress)
+        print(released)
+    except urllib.error.HTTPError:
+        print('Exception skip')
+        continue
+    except google_play_scraper.exceptions.NotFoundError:
+        print('Exception skip')
+        continue
 
-    print(c)
-    c=c+1
-
-
-
-    print(app_name)
-    print(updated)
-    print(size)
-    print('orginal price',originalPrice)
-    print('adsupport',adSupported)
-    print('relesed',released)
-    print(privacyPolicy)
-    print(developerId)
-    print(developer)
-    print(developerWebsite)
-    print(developerAddress)
-    print(released)
-
+    
     #description=result['description']
     
     #genreId=result['genreId']
