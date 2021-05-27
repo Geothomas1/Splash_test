@@ -15,7 +15,7 @@ service = build('sheets', 'v4', credentials=creds)
 # Call the Sheets API
 sheet = service.spreadsheets()
 
-mylist=['com.eniseistudio.logistics_management', 'com.eniseistudio.news.estados_unidos', 'com.eniseistudio.dental_assistant', 'com.eniseistudio.course.medical_assistant', 'com.eniseistudio.majors.course.business_administration']
+mylist=['com.BestMp3RingtonesCSA', 'com.MostPopularRingtones2017CSA', 'com.ChristmasRingtonesCSA', 'com.Latest2017RingtonesCSA','com.facebook.katana']
 c=1
 for i in mylist:
     result = app(i,
@@ -49,6 +49,58 @@ for i in mylist:
     developerAddress=result['developerAddress']
     developerInternalID=result['developerInternalID']
     version=result['version']
+
+    if(category==None):
+        category='N/A'
+    if(rating==None):
+        rating='N/A'
+    if(count_rated==None):
+        count_rated='N/A'
+    if(installs==None):
+        installs='N/A'
+    if(minInstalls==None):
+        minInstalls='N/A'
+    if(free==None):
+        free='N/A'
+    if(price==None):
+        price='N/A'
+    if(currency==None):
+        currency='N/A'
+    if(size==None):
+        size='N/A'
+    if(developerEmail==None):
+        developerEmail='N/A'
+    if(androidVersion==None):
+        androidVersion='N/A'
+    if(privacyPolicy==None):
+        privacyPolicy='N/A'
+    if(developerWebsite==None):
+        developerWebsite='N/A'
+    if(developerAddress==None):
+        developerAddress='N/A'
+    if(released==None):
+        released='N/A'
+    if(contentRating==None):
+        contentRating='N/A'
+    if(adSupported==None):
+        adSupported='N/A'
+    if(offersIAP==None):
+        offersIAP='N/A'
+    if(editorsChoice==None):
+        editorsChoice='N/A'
+    if(summary==None):
+        summary='N/A'
+    if(reviews==None):
+        reviews='N/A'
+    if(androidVersionText==None):
+        androidVersionText='N/A'
+    if(developer==None):
+        developer='N/A'
+    if(developerInternalID==None):
+        developerInternalID='N/A'
+    if(version==None):
+        version='N/A'
+
     data = [[app_name,
     appId,
     category,
