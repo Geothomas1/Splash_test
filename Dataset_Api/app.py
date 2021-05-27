@@ -142,7 +142,7 @@ for i in mylist:
     currency,size,androidVersion,developerId,developerWebsite,developerEmail,released,
     privacyPolicy,contentRating,adSupported,offersIAP,editorsChoice,summary,reviews,
     androidVersionText,developer,developerAddress,developerInternalID,version]]
-    result = sheet.values().append(spreadsheetId=SPREADSHEET_ID, range="Sheet1!A1:Y1", valueInputOption="USER_ENTERED", insertDataOption="INSERT_ROWS", body={"values":data}).execute()
+    result1 = sheet.values().append(spreadsheetId=SPREADSHEET_ID, range="Sheet1!A1:Y1", valueInputOption="USER_ENTERED", insertDataOption="INSERT_ROWS", body={"values":data}).execute()
     print(c)
     print(appId)
     if 60 and (c % 60) == 0:
