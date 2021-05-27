@@ -1,6 +1,6 @@
 from google_play_scraper import app
 
-mylist=['com.eniseistudio.logistics_management', 'com.eniseistudio.news.estados_unidos', 'com.eniseistudio.dental_assistant', 'com.eniseistudio.course.medical_assistant', 'com.eniseistudio.majors.course.business_administration']
+mylist=['com.facebook.katana']
 c=1
 for i in mylist:
     result = app(i,
@@ -37,8 +37,20 @@ for i in mylist:
     version=result['version']
     recentChanges=result['recentChanges']
     updated=result['updated']
+    if(privacyPolicy==None):
+        privacyPolicy='N/A'
+    if(developerWebsite==None):
+        developerWebsite='N/A'
+    if(developerAddress==None):
+        developerAddress='N/A'
+    if(released==None):
+        released='N/A'
+
     print(c)
     c=c+1
+
+
+
     print(app_name)
     print(updated)
     print(size)
@@ -46,6 +58,11 @@ for i in mylist:
     print('adsupport',adSupported)
     print('relesed',released)
     print(privacyPolicy)
+    print(developerId)
+    print(developer)
+    print(developerWebsite)
+    print(developerAddress)
+    print(released)
 
     #description=result['description']
     
