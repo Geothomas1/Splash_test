@@ -144,11 +144,12 @@ for i in mylist:
     androidVersionText,developer,developerAddress,developerInternalID,version]]
     result = sheet.values().append(spreadsheetId=SPREADSHEET_ID, range="Sheet1!A1:Y1", valueInputOption="USER_ENTERED", insertDataOption="INSERT_ROWS", body={"values":data}).execute()
     print(c)
+    print(appId)
     if 60 and (c % 60) == 0:
         print("On Sleep 120 sec")
         time.sleep(120)
     c=c+1
-    print(appId)
+    
     #print(result)
     
 
