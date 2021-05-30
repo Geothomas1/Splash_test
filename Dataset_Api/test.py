@@ -1,6 +1,7 @@
 from google_play_scraper import app
 import urllib
 import google_play_scraper
+import play_scraper
 # import play_scraper
 # import scraper
 # res=play_scraper.details('com.kinedu.appkinedu')
@@ -11,12 +12,14 @@ import google_play_scraper
 
 # res3=result = app('com.kinedu.appkinedu', lang='en', country='us')
 #print(res3['minInstalls'])
-mylist=['com.kinedu.appkinedu','com.whatsapp']
+mylist=['jp.hyoromo.vocaloidclockwidget']
 c=1
 for i in mylist:
     print(i)
     try:
         result = app(i, lang='en', country='in')
+        res=play_scraper.details(i)
+
         app_name=result['title']
         appId=result['appId']
         category=result['genre']
@@ -48,6 +51,7 @@ for i in mylist:
         version=result['version']
         recentChanges=result['recentChanges']
         updated=result['updated']
+        last_update=res['updated']
         if(privacyPolicy==None):
             privacyPolicy='N/A'
         if(developerWebsite==None):
@@ -71,12 +75,15 @@ for i in mylist:
         print(developerAddress)
         print(released)
         print(currency)
+        print(last_update)
     except urllib.error.HTTPError:
         print('Exception skip')
         continue
     except google_play_scraper.exceptions.NotFoundError:
         print('Exception skip')
         continue
+    except AttributeError:
+        print("Exception Skip 3 from google play scraper")
 
     
     #description=result['description']
