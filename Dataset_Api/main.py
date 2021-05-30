@@ -118,6 +118,7 @@ for i in mylist:
         continue
     except AttributeError:
         print("Exception Skip 3 from google play scraper")
+        continue
 result1 = sheet.values().append(spreadsheetId=SPREADSHEET_ID,range="Sheet2!A1:AC1", valueInputOption="USER_ENTERED",insertDataOption="INSERT_ROWS",body={"values":data}).execute()
 
     
