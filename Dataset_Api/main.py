@@ -2,7 +2,7 @@ import time
 import urllib
 import google_play_scraper
 import play_scraper
-
+import requests
 from google_play_scraper import app
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
@@ -89,13 +89,19 @@ for i in mylist:
         #     time.sleep(62)
         # print(data)
     except urllib.error.HTTPError:
-        print('Exception 1 skip')
+        print('Urllib Error HttpError Skip 1')
         continue
     except google_play_scraper.exceptions.NotFoundError:
-        print('Exception 2 skip')
+        print('google play scraper exception Skip 2')
         continue
     except AttributeError:
-        print("Exception Skip 3 from google play scraper")
+        print("Attribute Error Exception Skip 3")
+        continue
+    except ValueError:
+        print('Value Exception Skip 3')
+        continue
+    except requests.exceptions.HTTPError:
+        print('Request Exception Skip 4')
         continue
 result1 = sheet.values().append(spreadsheetId=SPREADSHEET_ID,range="Sheet2!A1:AC1", valueInputOption="USER_ENTERED",insertDataOption="INSERT_ROWS",body={"values":data}).execute()
 
