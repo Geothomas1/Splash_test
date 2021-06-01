@@ -2,6 +2,7 @@ from google_play_scraper import app
 import urllib
 import google_play_scraper
 import play_scraper
+import requests
 # import play_scraper
 # import scraper
 # res=play_scraper.details('com.kinedu.appkinedu')
@@ -12,7 +13,7 @@ import play_scraper
 
 # res3=result = app('com.kinedu.appkinedu', lang='en', country='us')
 #print(res3['minInstalls'])
-mylist=['jp.hyoromo.vocaloidclockwidget']
+mylist=['ml.quickemail.a2048', 'ml.quickemail.miazpro']
 c=1
 for i in mylist:
     print(i)
@@ -76,14 +77,28 @@ for i in mylist:
         print(released)
         print(currency)
         print(last_update)
+        
     except urllib.error.HTTPError:
-        print('Exception skip')
+        print('Urllib Error HttpError Skip 1')
         continue
     except google_play_scraper.exceptions.NotFoundError:
-        print('Exception skip')
+        print('google play scraper exception Skip 2')
         continue
     except AttributeError:
-        print("Exception Skip 3 from google play scraper")
+        print("Attribute Error Exception Skip 3")
+        continue
+    except ValueError:
+        print('Value Exception Skip 3')
+        continue
+    except requests.exceptions.HTTPError:
+        print('Request Exception Skip 4')
+        continue
+    except google_play_scraper.exceptions.ExtraHTTPError:
+        print("google_play_scraper.exceptions.ExtraHTTPError Skip 5")
+        continue
+
+
+
 
     
     #description=result['description']
