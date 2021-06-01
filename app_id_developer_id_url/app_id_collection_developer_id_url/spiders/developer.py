@@ -39,6 +39,6 @@ class DeveloperSpider(scrapy.Spider):
             if i not in temp_list:
                 temp_list.append(i)
         print(len(temp_list))
-        print(temp_list)  
+        yield{'id':temp_list}  
 
         
