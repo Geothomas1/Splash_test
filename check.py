@@ -85,7 +85,7 @@ if res.status_code == 200:
                 print(center['name'])
                 for session in center['sessions']:
                     print(session)
-                    if session['available_capacity'] > 0 and session['available_capacity_dose1'] > 0:
+                    if session['available_capacity'] == 0 and session['available_capacity_dose1'] == 0:
                         if session['min_age_limit'] == 45 or session['min_age_limit'] == 18:
                             pb = Pushbullet(GEO_API_KEY)
                             push = pb.push_note('There is VACCANT SLOTS in center' + center['name'], 'Poi Vaccine edukkado!')
