@@ -1,0 +1,8 @@
+*.scrapy
+*.json
+!spec/*.json
+*.pdf
+*.jl
+*.csv
+*.zip
+
